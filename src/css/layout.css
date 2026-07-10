@@ -482,7 +482,7 @@
 
 .about__name-badge {
     position: absolute;
-    bottom: -100px;        
+    bottom: -50px;        
     left: 20px;
     right: -100px;    
     background-color: var(--color-primary);
@@ -498,14 +498,117 @@
     white-space: nowrap;
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 1200px) {
-    .about__name-badge {
-        font-size: 90px;
-    }
+/* style of section secrets*/
+.secrets {
+    background-color: var(--color-bg-dark); 
+    color: var(--color-white);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden; 
+}
+
+.secrets::before,
+.secrets::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3vw; 
+    background-color: var(--color-primary);
+    z-index: 1;
+}
+.secrets::before { left: 0; }
+.secrets::after { right: 0; }
+
+
+
+
+.secrets__header {
+    margin-bottom: 80px;
+}
+
+.secrets__title {
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.secrets__subtitle {
+    color: var(--color-primary);
+    font-size: 18px;
+}
+
+.secrets__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px; 
+    margin-bottom: 60px;
 }
 
 
+.secret-card {
+    background-color: #2A2A2A; 
+    padding: 0 25px 40px 25px; 
+    border-radius: none;
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+    border: 2px solid transparent; 
+    transition: border-color 0.3s ease;
+}
+
+
+.secret-card__bg-text {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    font-size: 50px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--color-white); 
+    z-index: 1; 
+    white-space: nowrap; 
+    transition: color 0.3s ease;
+}
+
+.secret-card__img {
+    position: relative;
+    z-index: 2; 
+    width: 100%;
+    max-width: 250px; 
+    margin-top: -50px; 
+    margin-bottom: 25px;
+    filter: drop-shadow(0 15px 15px rgba(0,0,0,0.5)); 
+}
+
+
+.secret-card__heading {
+    color: var(--color-primary);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.secret-card__text {
+    font-size: 13px;
+    color: #D3D3D3; 
+    line-height: 1.6;
+}
+
+.secret-card:hover {
+    border-color: var(--color-primary); 
+}
+
+.secret-card:hover .secret-card__bg-text {
+    color: var(--color-primary); 
+}
 
 @media (max-width: 992px) {
     .hero__container {
@@ -584,6 +687,14 @@
         left: -20px;
         bottom: -50px;
     }
+     .secrets__grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 60px; /* Plus d'espace en bas pour les éléments qui dépassent */
+    }
+    .secrets::before,
+    .secrets::after {
+        width: 15px; 
+    }
 }
 
 @media (max-width: 576px) {
@@ -638,5 +749,15 @@
     .about__gray-bg {
         left: 5%;
         bottom: -100px;
+    }
+    .secrets__grid {
+        grid-template-columns: 1fr; 
+    }
+    .secrets::before,
+    .secrets::after {
+        display: none; 
+    }
+    .secret-card__bg-text {
+        font-size: 60px; 
     }
 }
