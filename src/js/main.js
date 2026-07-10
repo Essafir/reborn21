@@ -59,3 +59,41 @@ gsap.to(".partners__track", {
     duration: 15,      
     repeat: -1         
 });
+
+//animation for features section
+const grid = document.querySelector('.features__grid');
+const dots = document.querySelectorAll('.features__pagination .dot');
+
+if (grid && dots.length > 0) {
+    grid.addEventListener('scroll', () => {
+        const scrollPercentage = grid.scrollLeft / (grid.scrollWidth - grid.clientWidth);
+        const activeIndex = Math.round(scrollPercentage * (dots.length - 1));
+        
+        dots.forEach(dot => dot.classList.remove('is-active'));
+        if (dots[activeIndex]) dots[activeIndex].classList.add('is-active');
+    });
+}
+
+const featureCards = document.querySelectorAll('.feature-card');
+
+featureCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        gsap.to(card, {
+            y: -15, 
+            scale: 1.03, 
+            boxShadow: "0 20px 30px rgba(0,0,0,0.15)", 
+            duration: 0.4,
+            ease: "back.out(1.5)" 
+        });
+    });
+
+    card.addEventListener('mouseleave', () => {
+        gsap.to(card, {
+            y: 0, 
+            scale: 1,
+            boxShadow: "0 0px 0px rgba(0,0,0,0)",
+            duration: 0.3,
+            ease: "power2.out"
+        });
+    });
+});
