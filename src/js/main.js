@@ -97,3 +97,17 @@ featureCards.forEach(card => {
         });
     });
 });
+
+//animation for about section
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".about__image-wrapper", {
+    scrollTrigger: {
+        trigger: ".about",
+        start: "top 75%", 
+    },
+    x: -150, 
+    opacity: 0, 
+    duration: 1.2,
+    ease: "power2.out"
+});
