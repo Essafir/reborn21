@@ -12,9 +12,37 @@
     --color-text-gold: #D2B938;
 
     /* Typographies*/
-    --font-primary: 'Montserrat';
-    --font-secondary: 'Poppins';
-    /* Transitions*/
-    --transition-smooth: all 0.3s ease;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Poppins', sans-serif;
+    --font-SC: 'Six Caps', sans-serif;
+    
+   
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@font-face {
+    font-family: 'Six Caps';
+    src: url('../assets/fonts/SixCaps-Regular.woff2') format('woff2');
+    font-weight: 400; 
+    font-style: normal;
+    font-display: swap; 
 }
 
