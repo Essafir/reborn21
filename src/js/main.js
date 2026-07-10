@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         gsap.registerPlugin(ScrollTrigger);
     }
 
-    
+ //section hero animation   
     gsap.from(".hero__circle", {
         scale: 0.5,
         opacity: 0,
@@ -50,4 +50,12 @@ document.addEventListener('DOMContentLoaded', function() {
         ease: "power2.out"
     });
 
+});
+
+//section partners animation
+gsap.to(".partners__track", {
+    xPercent: -50,     
+    ease: "none",      
+    duration: 15,      
+    repeat: -1         
 });
