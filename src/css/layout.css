@@ -610,6 +610,99 @@
     color: var(--color-primary); 
 }
 
+/*style of section rejoigniez nous*/
+.join-live {
+    background-color: #F4F6F6; 
+    position: relative;
+    padding-bottom: 80px;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.join-live__container {
+    position: relative;
+    z-index: 2;
+    margin-top: -250px; 
+    text-align: center;
+}
+.join-live__mockups {
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.join-live__img {
+    max-width: 100%;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.2));
+    z-index: 3;
+}
+
+.join-live__title {
+    color: var(--color-primary); 
+    font-size: 38px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.join-live__subtitle {
+    color: var(--color-text-dark);
+    font-size: 22px;
+    margin-bottom: 40px;
+}
+
+
+.decor-plus {
+    position: absolute;
+    font-family: sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    z-index: 1;
+}
+
+.decor-plus--1 {
+    top: 40%;
+    left: 10%;
+    color: var(--color-primary);
+}
+
+.decor-plus--2 {
+    top: 45%;
+    right: 15%;
+    color: #000000;
+}
+
+.decor-plus--3 {
+    bottom: 30%;
+    right: 5%;
+    color: var(--color-primary); 
+    transform: rotate(45deg); 
+}
+
+.decor-plus--4 {
+    bottom: 15%;
+    left: 12%;
+    color: var(--color-primary);
+}
+
+.join-live__bg-text {
+    position: absolute;
+    transform: translateX(-50%);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 208px;
+    color: transparent; 
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.1);
+    z-index: 0;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
 @media (max-width: 992px) {
     .hero__container {
         flex-direction: column;
@@ -689,11 +782,17 @@
     }
      .secrets__grid {
         grid-template-columns: repeat(2, 1fr); 
-        gap: 60px; /* Plus d'espace en bas pour les éléments qui dépassent */
+        gap: 60px;
     }
     .secrets::before,
     .secrets::after {
         width: 15px; 
+    }
+    .join-live__container {
+        margin-top: -80px;
+    }
+    .join-live__title {
+        font-size: 28px;
     }
 }
 
@@ -759,5 +858,11 @@
     }
     .secret-card__bg-text {
         font-size: 60px; 
+    }
+    .join-live__container {
+        margin-top: -50px;
+    }
+    .decor-plus {
+        display: none;
     }
 }
