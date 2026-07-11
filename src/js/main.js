@@ -111,3 +111,45 @@ gsap.from(".about__image-wrapper", {
     duration: 1.2,
     ease: "power2.out"
 });
+
+//section temoigniages
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.temoignages__slider .slide');
+    const dots = document.querySelectorAll('.temoignages__dots .dot');
+    const totalSlides = slides.length;
+
+    if (totalSlides > 0) {
+        
+        function updateCarousel(currentIndex) {
+            slides.forEach(slide => slide.classList.remove('active', 'prev', 'next'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            const prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            const nextIndex = (currentIndex + 1) % totalSlides;
+
+            slides[currentIndex].classList.add('active');
+            slides[prevIndex].classList.add('prev');
+            slides[nextIndex].classList.add('next');
+            
+            if(dots[currentIndex]) {
+                dots[currentIndex].classList.add('active');
+            }
+        }
+
+        updateCarousel(0);
+
+        slides.forEach((slide, index) => {
+            slide.addEventListener('click', () => {
+                if (slide.classList.contains('prev') || slide.classList.contains('next')) {
+                    updateCarousel(index);
+                }
+            });
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                updateCarousel(index);
+            });
+        });
+    }
+});
