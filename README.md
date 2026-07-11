@@ -22,4 +22,4 @@ Ce projet est un site web statique. Pour l'exécuter localement :
 
 1. Cloner le dépôt :
    ```bash
-   git clone [https://github.com/Essafir/reborn21.git]
+   git clone https://github.com/Essafir/reborn21.git
